@@ -2,11 +2,23 @@ import React, { Component } from "react";
 
 class Counter extends Component {
     state = {
-        count: 0
+        count: 0,
+        tags: []
     };
     style = {
         fontSize: 10,
         fontWeight: "bold"
+    };
+    //To Bind Event handlers use arrow functions while defining functions or use constructors
+    // and bind every event handlers used in the code
+
+    // constructor() {
+    //     super();
+    //     this.handleIncrement = this.handleIncrement.bind(this);
+    // }
+
+    handleIncrement = () => {
+        this.setState({ count: this.state.count + 1 });
     };
     render() {
         return (
@@ -14,10 +26,33 @@ class Counter extends Component {
                 <span style={this.style} className={this.getBadgeClasses()}>
                     {this.formatCount()}
                 </span>
-                <button className="btn btn-secondary btn-sm">Increment</button>
+                <button
+                    onClick={this.handleIncrement}
+                    className="btn btn-secondary btn-sm"
+                >
+                    Increment
+                </button>
+                {/* <ul>
+                    {this.state.tags.map(tag => (
+                        <li key={tag}>{tag}</li>
+                    ))}
+                </ul> */}
+                {/* {this.state.tags.length === 0 && "Please create new tags"}
+                {this.renderTags()} */}
             </div>
         );
     }
+
+    // renderTags() {
+    //     if (this.state.tags.length === 0) return "There are no tags!";
+    //     return (
+    //         <ul>
+    //             {this.state.tags.map(tag => (
+    //                 <li key={tag}>{tag}</li>
+    //             ))}
+    //         </ul>
+    //     );
+    // }
 
     getBadgeClasses() {
         let classes = "badge m-2 badge-";
