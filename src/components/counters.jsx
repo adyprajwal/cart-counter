@@ -22,7 +22,7 @@ class Counters extends Component {
                         key={counter.id}
                         value={counter.value}
                         onDelete={this.handleDelete}
-                        id={counter.id}
+                        counter={counter}
                     />
                 ))}
             </div>
