@@ -3,14 +3,16 @@ import React, { Component } from "react";
 //Stateless Functional Components
 const NavBar = ({ totalCounters }) => {
     return (
-        <nav className="navbar navbar-light bg-light">
-            <a className="navbar-brand" href="#">
-                Items
-                <span className="m-2 badge badge-pill badge-secondary">
-                    {totalCounters}
-                </span>
-            </a>
-        </nav>
+        <div className="container container-fluid">
+            <nav className="navbar navbar-light bg-light">
+                <a className="navbar-brand" href="#">
+                    Items
+                    <span className="m-2 badge badge-pill badge-secondary">
+                        {totalCounters}
+                    </span>
+                </a>
+            </nav>
+        </div>
     );
 };
 
