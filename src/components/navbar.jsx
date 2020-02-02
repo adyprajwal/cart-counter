@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 //Stateless Functional Components
-const Navbar = props => {
+const NavBar = props => {
     return (
         <nav className="navbar navbar-light bg-light">
             <a className="navbar-brand" href="#">
